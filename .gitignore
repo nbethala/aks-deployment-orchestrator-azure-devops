@@ -1,0 +1,31 @@
+
+# Terraform variable files
+terraform.tfvars
+*.auto.tfvars
+
+# Local kubeconfig
+kubeconfig
+.kube/
+
+# SSH keys
+*.pem
+*.key
+*.pub
+id_rsa*
+
+# Terraform state and plan files
+*.tfstate
+*.tfstate.*
+*.backup
+*.log
+*.plan
+
+# Terraform crash logs
+crash.log
+
+# CLI history
+.terraform/
+.terraform.lock.hcl
+
+# VSCode settings
+.vscode/
