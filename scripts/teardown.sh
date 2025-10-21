@@ -6,8 +6,8 @@
 # - Shared resource group
 
 RESOURCE_GROUP_NAME="terraform-state-rg"
-STAGE_SA_ACCOUNT="tfstagebackend2025"
-DEV_SA_ACCOUNT="tfdevbackend2025"
+STAGE_SA_ACCOUNT="tfstagebacknb2025"
+DEV_SA_ACCOUNT="tfdevbacknb2025"
 CONTAINER_NAME="tfstate"
 
 # Function to delete blob container if it exists
