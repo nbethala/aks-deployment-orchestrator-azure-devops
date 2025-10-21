@@ -1,0 +1,33 @@
+# Starter pipeline
+
+trigger:
+ branches:
+  include:
+    - main
+    - feature/*
+ paths:
+   include:
+     - dev/*
+     - staging/*
+     - modules/*
+     - azure-pipelines.yml
+
+stages: 
+- stage: validate
+  jobs:
+  - job: terraform_validate
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: TerraformInstaller@1
+      inputs:
+       terraformVersion: 'latest'
+     
+    - task: TerraformTask@5
+      inputs: 
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
+        backendAzureRmUseEntraIdForAuthentication: false
+        backendServiceArm: 'Azure_Dev_NB(33f9ba7c-adf0-45af-ad9e-2b351fe1b420)'
+  
